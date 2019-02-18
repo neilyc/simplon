@@ -1,0 +1,31 @@
+<div class="modal" tabindex="-1" role="dialog" id="booking-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Attribuer l'ordinateur <span id="resource-name"></span></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="needs-validation" id="booking-form">
+        <div class="modal-body">
+          <input type="hidden" id="start">
+          <input type="hidden" id="end">
+          <input type="hidden" id="resource-id">
+          <div class="form-group">
+            <label for="userId">Selectionner un utilisateur</label>
+            <select name="userId" id="userId" required>
+              {% for user in users %}
+                <option value="{{ user.id }}"> {{ user.firstname }} {{ user.name }}</option>
+              {% endfor %}
+            </select>
+          </div> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+          <button type="submit" class="btn btn-primary">Valider</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

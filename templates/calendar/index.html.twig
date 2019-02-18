@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My cool blog posts{% endblock %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset('fullcalendar/css/fullcalendar.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('fullcalendar/css/scheduler.min.css') }}" />
+{% endblock %}
+
+
+{% block body %}
+  <div id="calendar"></div>
+  {% include 'booking/modal/new.html.twig' %}
+{% endblock %}
+
+
+
+{% block javascripts %}
+  <script type="text/javascript" src="{{ asset('fullcalendar/js/fullcalendar.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('fullcalendar/js/scheduler.min.js') }}"></script>  
+  <script type="text/javascript" src="{{ asset('fullcalendar/js/locale-all.js') }}"></script>
+  
+  <script type="text/javascript" src="{{ asset('js/calendar.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/bookingModal.js') }}"></script>
+{% endblock %}
