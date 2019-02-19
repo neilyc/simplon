@@ -20,6 +20,7 @@ class ComputerController extends AbstractController
 {
   /**
    * @Route("/", name="computer_index", methods={"GET"})
+   * #Display Computer list
    */
   public function index(): Response
   {
@@ -34,6 +35,7 @@ class ComputerController extends AbstractController
 
   /**
    * @Route("/new", name="computer_new", methods={"GET","POST"})
+   * #Create new computer
    */
   public function new(Request $request): Response
   {
@@ -57,6 +59,7 @@ class ComputerController extends AbstractController
 
   /**
    * @Route("/ajax", name="computer_ajax", methods={"GET"})
+   * #Return All computer in json format
    */
   public function ajax(): Response
   {
@@ -81,6 +84,8 @@ class ComputerController extends AbstractController
 
   /**
    * @Route("/{id}", name="computer_show", methods={"GET"})
+   * #Display computer info
+   * #Params {computerId}
    */
   public function show(Computer $computer): Response
   {
@@ -91,6 +96,8 @@ class ComputerController extends AbstractController
 
   /**
    * @Route("/{id}/edit", name="computer_edit", methods={"GET","POST"})
+   * #Display computer edit form
+   * #Params {computerId}
    */
   public function edit(Request $request, Computer $computer): Response
   {
@@ -113,6 +120,8 @@ class ComputerController extends AbstractController
 
   /**
    * @Route("/{id}", name="computer_delete", methods={"DELETE"})
+   * #delete computer
+   * #Params {computerId}
    */
   public function delete(Request $request, Computer $computer): Response
   {

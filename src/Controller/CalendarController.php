@@ -13,6 +13,7 @@ class CalendarController extends AbstractController
 {
   /**
   * @Route("/", name="calendar_index", methods={"GET"})
+  * #Display Calendar
   */
   public function index()
   {

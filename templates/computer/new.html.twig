@@ -3,9 +3,9 @@
 {% block title %}Nouvel ordinateur{% endblock %}
 
 {% block body %}
-    <h1>Créer un nouvel ordinateur</h1>
+  <h1>Créer un nouvel ordinateur</h1>
 
-    {{ include('computer/_form.html.twig') }}
+  {{ include('computer/_form.html.twig') }}
 
-    <a href="{{ path('computer_index') }}">Retour à la liste</a>
+  <a href="{{ path('computer_index') }}" class="btn btn-secondary">Retour à la liste</a>
 {% endblock %}

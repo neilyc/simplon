@@ -22,6 +22,7 @@ class BookingController extends AbstractController
 {
   /**
    * @Route("/", name="booking_index", methods={"GET"})
+   * #Return All booking in json format
    */
   public function index(): Response
   {
@@ -49,6 +50,9 @@ class BookingController extends AbstractController
 
   /**
    * @Route("/new", name="booking_new", methods={"POST"})
+   * #Create a new booking
+   * #Params {startDate, endDate, resourceId, userId}
+   * #Return a new booking
    */
   public function new(Request $request): Response
   {
@@ -87,7 +91,10 @@ class BookingController extends AbstractController
   }
 
   /**
-   * @Route("/{id}", name="booking_delete", methods={"DELETE"})
+   * @Route("/{id}", name="booking_delete", methods={"DELETE"}, defaults={"id" = null})
+   * #Delete a booking
+   * #Params {bookingId}
+   * #Return deleted bookingId
    */
   public function delete(Request $request, Booking $booking): Response
   {

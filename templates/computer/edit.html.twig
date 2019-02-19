@@ -3,12 +3,12 @@
 {% block title %}Editer l'ordinateur{% endblock %}
 
 {% block body %}
-    <h1>Editer l'ordinateur</h1>
+  <h1>Editer l'ordinateur</h1>
 
-    {{ include('computer/_form.html.twig', {'button_label': 'Editer'}) }}
+  {{ include('computer/_form.html.twig', {'button_label': 'Editer'}) }}
 
-    
+  
 
-    {{ include('computer/_delete_form.html.twig') }}
-    <a href="{{ path('computer_index') }}">Retour à la liste</a>
+  {{ include('computer/_delete_form.html.twig') }}
+  <a href="{{ path('computer_index') }}" class="btn btn-secondary">Retour à la liste</a>
 {% endblock %}

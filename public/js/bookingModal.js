@@ -3,7 +3,7 @@ $(function () {
     evt.preventDefault();
     $.ajax({
       method: "POST",
-      url: "/booking/new",
+      url: CONSTS.url.booking.new,
       data: { 
         userId: $("#booking-modal #booking-form #userId").val(),
         resourceId: $("#booking-modal #booking-form #resource-id").val(),
@@ -12,9 +12,7 @@ $(function () {
       }
     })
     .done(function( res ) {
-      res = $.parseJSON(res);
-      var event = {id: res.id, title: res.title, start:  res.start, end: res.end, resourceId: res.resourceId};
-      $('#calendar').fullCalendar( 'renderEvent', event, true);
+      $('#calendar').fullCalendar( "refetchEvents" );
       $('#booking-modal').modal("hide");
     });
   });
@@ -22,11 +20,10 @@ $(function () {
   $('#booking-delete-modal .btn.btn-primary').on('click', function (e) {
     $.ajax({
       method: "DELETE",
-      url: "/booking/"+$("#booking-delete-modal #id").val()
+      url: CONSTS.url.booking.delete+"/"+$("#booking-delete-modal #id").val()
     })
     .done(function( res ) {
-      res = $.parseJSON(res);
-      $("#calendar").fullCalendar('removeEvents', res.id);
+      $('#calendar').fullCalendar( "refetchEvents" );
       $('#booking-delete-modal').modal("hide");
     });
   })

@@ -1,3 +1,6 @@
 .fc-timeline-event{
   cursor: pointer;
 }
+form {
+  display: inline;
+}

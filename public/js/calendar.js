@@ -52,9 +52,9 @@ $(function () {
       $("#booking-delete-modal #id").val(event.id);
     },
     resourceLabelText: 'Computer',
-    resources: '/computer/ajax',
+    resources: CONSTS.url.computer.getAll,
     events: {
-      url: '/booking', 
+      url: CONSTS.url.booking.getAll, 
     }
   });
 });

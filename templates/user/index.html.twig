@@ -3,35 +3,37 @@
 {% block title %}Utilisateurs{% endblock %}
 
 {% block body %}
-    <h1>Utilisateurs</h1>
+  <h1>Utilisateurs</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Prénom</th>
-                <th>Nom</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.firstname }}</td>
-                <td>{{ user.name }}</td>
-                <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">Voir</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">Editer</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">Pas d'utilisateur</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.name }}</td>
+        <td>
+          <div class="btn-group">
+            <a href="{{ path('user_show', {'id': user.id}) }}" class="btn btn-primary">Voir</a>
+            <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-info">Editer</a>
+          </div>
+        </td>
+      </tr>
+    {% else %}
+      <tr>
+        <td colspan="4">Pas d'utilisateur</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 
-    <a href="{{ path('user_new') }}" class="btn btn-info">Créer un nouveau</a>
+  <a href="{{ path('user_new') }}" class="btn btn-info">Ajouter</a>
 {% endblock %}

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Test Application{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     {% block stylesheets %}{% endblock %}
@@ -27,7 +27,7 @@
       {% block body %}{% endblock %}
     </div>
   </body>
-  
+  {% include 'share/js.html.twig' %}
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="{{ asset('fullcalendar/js/moment.min.js') }}"></script>
   

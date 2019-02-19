@@ -14,7 +14,7 @@
           <input type="hidden" id="resource-id">
           <div class="form-group">
             <label for="userId">Selectionner un utilisateur</label>
-            <select name="userId" id="userId" required>
+            <select name="userId" id="userId" required class="form-control">
               {% for user in users %}
                 <option value="{{ user.id }}"> {{ user.firstname }} {{ user.name }}</option>
               {% endfor %}
