@@ -32,7 +32,7 @@ $(function () {
       for (var i = 0; i < events.length; i++) {
         var event = events[i];
         if(event.resourceId == resource.id) {
-          if((start >= event.start && start <= event.end) || (event.start >= start && event.start <= end)) {
+          if((start >= event.start && start < event.end) || (event.start >= start && event.start < end)) {
             overlap = true;
           }
         }
