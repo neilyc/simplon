@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Computer index{% endblock %}
+{% block title %}Ordinateurs{% endblock %}
 
 {% block body %}
-    <h1>Computer index</h1>
+    <h1>Ordinateurs</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
+                <th>Nom</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -19,17 +19,17 @@
                 <td>{{ computer.id }}</td>
                 <td>{{ computer.title }}</td>
                 <td>
-                    <a href="{{ path('computer_show', {'id': computer.id}) }}">show</a>
-                    <a href="{{ path('computer_edit', {'id': computer.id}) }}">edit</a>
+                    <a href="{{ path('computer_show', {'id': computer.id}) }}">Voir</a>
+                    <a href="{{ path('computer_edit', {'id': computer.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Pas d'ordinateur</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('computer_new') }}">Create new</a>
+    <a href="{{ path('computer_new') }}" class="btn btn-info">Créer un nouveau</a>
 {% endblock %}

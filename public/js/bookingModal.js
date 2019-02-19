@@ -18,4 +18,16 @@ $(function () {
       $('#booking-modal').modal("hide");
     });
   });
+
+  $('#booking-delete-modal .btn.btn-primary').on('click', function (e) {
+    $.ajax({
+      method: "DELETE",
+      url: "/booking/"+$("#booking-delete-modal #id").val()
+    })
+    .done(function( res ) {
+      res = $.parseJSON(res);
+      $("#calendar").fullCalendar('removeEvents', res.id);
+      $('#booking-delete-modal').modal("hide");
+    });
+  })
 });
