@@ -4,3 +4,7 @@
 form {
   display: inline;
 }
+#calendar {
+  max-width: 1010px;
+  margin: 40px auto;
+}
