@@ -16,6 +16,7 @@ $(function () {
         maxTime: '18:00:00'
       }
     },
+    eventLimit: true,
     businessHours: {
       dow: [ 1, 2, 3, 4, 5 ],
       start: '08:00',
